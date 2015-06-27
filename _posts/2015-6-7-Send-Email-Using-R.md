@@ -16,6 +16,28 @@ install.packages('mailR')
 #load the library
 library('mailR')
 ```
+For the current test I'll generate two distributions of 1000 numbers and plot their histograms on pdf files:
+
+```R
+#set the pseudo random number generator seed so we can get the same results
+#generate 1000 gaussian/uniform numbers
+set.seed(1); gNum <- rnorm(1000)
+set.seed(1); uNum <- runif(1000)
+#path where the pdf will be stored locally, make sure you use a defined path
+pdfFileName1 <- '/tmp/histoGauss.pdf'
+pdfFileName2 <- '/tmp/histoUnif.pdf'
+
+#plot the first pdf
+pdf(file = pdfFileName1)
+hist(gNum, main='gaussian distribution')
+graphics.off()
+
+#plot the second pdf
+pdf(file = pdfFileName2)
+hist(uNum, main='uniform distribution')
+graphics.off()
+```
+
 <p align="center">
   ![_config.yml]({{ site.baseurl }}/images/)
 </p>
