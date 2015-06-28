@@ -9,7 +9,7 @@ The [mailR](https://github.com/rpremraj/mailR) package is, as defined by his aut
 
 First you'll need to install the mailR package (and rJava if not already installed) then load it:
 
-{% highlight R %}
+{% highlight R linenos=table%}
 #install the mailR package
 install.packages('rJava')
 install.packages('mailR')
@@ -19,7 +19,7 @@ library('mailR')
 
 For the current test I'll generate two distributions of 1000 numbers and plot their histograms on pdf files:
 
-{% highlight R %}
+{% highlight R linenos=table%}
 #set the pseudo random number generator seed so we can get the same results
 #generate 1000 gaussian/uniform numbers
 set.seed(1); gNum <- rnorm(1000)
