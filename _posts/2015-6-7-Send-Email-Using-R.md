@@ -7,7 +7,7 @@ I wanted to test the [mailR](https://github.com/rpremraj/mailR) package as I was
 
 As defined by his author Rahul Premraj, [mailR](https://github.com/rpremraj/mailR) is a utility to send emails from the R programming environment. The package has multiple features including the ability to attach files from the local file system to the email.
 
-First you'll need to install the mailR package add load it. Note that installing mailR requires installing [rJava](http://cran.r-project.org/web/packages/rJava/index.html). This is not always straightforward but plenty Stack Overflow's posts should help you to deal with that.
+First you'll need to install the mailR package and load it. Note that mailR requires installing [rJava](http://cran.r-project.org/web/packages/rJava/index.html). This is not always straightforward but plenty of Stack Overflow's posts should help you with that.
 
 {% highlight R %}
 #install the mailR package
@@ -53,11 +53,10 @@ send.mail(from = 'sender@gmail.com',
 		  )
 {% endhighlight %}
 
-As I don't really like the idea of putting the password in the code of my R program, I've first tried to use the aspmx.l.google.com server that works for gmail recipients only but does not require authentication. Unfortunately it doesn't work if your IPS blocks the access to port 25.
+As I don't really like the idea of putting the password in the code of my R program, I've first tried to use the aspmx.l.google.com server that works for gmail recipients only but does not require authentication. 
 
 {% highlight R %}
-send.mail(debug = TRUE,
-          from = 'sender@gmail.com',
+send.mail(from = 'sender@gmail.com',
           to = c('recipient@gmail.com'),
           subject = "Subject of the email",
           body = "Body of the email",
@@ -69,9 +68,20 @@ send.mail(debug = TRUE,
           )
 {% endhighlight %}
 
-I find the option of attaching files very handy to get the logs of your programs but the mailR package has other features as sending HTML formatted emails. Please refer to it's repositoty on [github](https://github.com/rpremraj/mailR) for more details.
+If you get the following issue with the previous code, check whether you have enabled [SMTP access for gmail](https://www.google.com/settings/security/lesssecureapps) or you need to configure R to connect via a proxy. 
 
-The codeblocks of this post are extracted from the following [R script](https://github.com/zumansky/dev/blob/master/R/SendEmail/sendEmails.r).
+{% highlight R %}
+Error in ls(envir = envir, all.names = private) : 
+  invalid 'envir' argument
+{% endhighlight %}
+
+If you’re still having the same issue you can set the debug parameter of send.mail to TRUE to get detailed logs and check the [tickets on github](https://github.com/rpremraj/mailR/issues). 
+
+I did get the previous error initially, when I was trying to run it from home. After a while, I’ve figured out that my IPS was blocking the access to port 25 and I managed to make it work from a different location.
+
+In addition to attaching files mailR has other interesting features as sending HTML formatted emails. Please refer to it's repository on [github](https://github.com/rpremraj/mailR) for more information.
+
+The codeblocks of this post are available [here](https://github.com/zumansky/dev/blob/master/R/SendEmail/sendEmails.r).
 
 
 
