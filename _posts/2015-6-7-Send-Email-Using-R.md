@@ -68,7 +68,7 @@ send.mail(from = 'sender@gmail.com',
           )
 {% endhighlight %}
 
-If you get the following issue with the previous code, check whether you have enabled [SMTP access for gmail](https://www.google.com/settings/security/lesssecureapps) or you need to configure R to connect via a proxy. 
+If you get the following error with the previous code, check whether you have enabled [SMTP access for gmail](https://www.google.com/settings/security/lesssecureapps) or you need to configure R to connect via a proxy. 
 
 {% highlight R %}
 Error in ls(envir = envir, all.names = private) : 
