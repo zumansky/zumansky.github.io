@@ -77,7 +77,7 @@ Error in ls(envir = envir, all.names = private) :
 
 If you’re still having the same issue you can set the debug parameter of send.mail to TRUE to get detailed logs and check the [tickets on github](https://github.com/rpremraj/mailR/issues). 
 
-I did get the previous error initially, when I was trying to run it from home. After a while, I’ve figured out that my IPS was blocking the access to port 25 and I managed to make it work from a different location.
+I did get the previous error initially, when I was trying to run it from home. After a while, I figured out that my IPS was blocking the access to port 25 and I managed to make it work from a different location.
 
 In addition to attaching files mailR has other interesting features as sending HTML formatted emails. Please refer to it's repository on [github](https://github.com/rpremraj/mailR) for more information.
 
