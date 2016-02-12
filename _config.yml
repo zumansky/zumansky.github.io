@@ -23,7 +23,7 @@ footer-links:
   flickr:
   github: zumansky
   instagram:
-  linkedin: uk.linkedin.com/in/zumansky
+  linkedin: zumansky
   pinterest:
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: ZoUmansky
@@ -54,7 +54,7 @@ baseurl: ""
 #
 
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 permalink: /:title/
 
 # The release of Jekyll Now that you're using
